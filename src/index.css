@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600;700&family=Erica+One&family=Love+Light&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 6%;
+    --foreground: 30 20% 88%;
+
+    --card: 240 8% 10%;
+    --card-foreground: 30 20% 88%;
+
+    --popover: 240 8% 10%;
+    --popover-foreground: 30 20% 88%;
+
+    --primary: 15 60% 65%;
+    --primary-foreground: 240 10% 6%;
+
+    --secondary: 240 8% 14%;
+    --secondary-foreground: 30 15% 75%;
+
+    --muted: 240 6% 16%;
+    --muted-foreground: 30 8% 50%;
+
+    --accent: 340 30% 45%;
+    --accent-foreground: 30 20% 90%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 6% 18%;
+    --input: 240 6% 18%;
+    --ring: 15 60% 65%;
+
+    --radius: 0.75rem;
+
+    --lyric-active: 30 25% 92%;
+    --lyric-inactive: 30 8% 40%;
+    --glass-bg: 240 8% 12% / 0.6;
+    --glass-border: 30 15% 30% / 0.15;
+    --note-bg: 30 15% 10%;
+    --note-shadow: 0 25px 60px -15px hsl(0 0% 0% / 0.5);
+    --vignette: radial-gradient(
+      ellipse at center,
+      transparent 40%,
+      hsl(240 10% 4%) 100%
+    );
+
+    --font-display: "Cormorant Garamond", serif;
+    --font-body: "Inter", sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-belanosima {
+    font-family: "Belanosima", sans-serif !important;
+  }
+
+  .glass-card {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  .text-lyric-active {
+    color: hsl(var(--lyric-active));
+  }
+
+  .text-lyric-inactive {
+    color: hsl(var(--lyric-inactive));
+  }
+
+  .bg-note {
+    background: hsl(var(--note-bg));
+  }
+
+  .shadow-note {
+    box-shadow: var(--note-shadow);
+  }
+
+  .bg-vignette {
+    background: var(--vignette);
+  }
+}
